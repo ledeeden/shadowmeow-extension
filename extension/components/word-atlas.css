@@ -1,0 +1,29 @@
+.word-atlas { margin: 12px 0; padding: 12px; border: 1px solid rgba(128,128,128,.25); border-radius: 12px; text-align: left; font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }
+.word-atlas-heading { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+.word-atlas-heading span, .word-atlas-credit { opacity: .7; font-size: 11px; }
+.word-atlas-body { display: flex; gap: 10px; margin-top: 8px; }
+.word-atlas-body img { width: 96px; height: 96px; object-fit: cover; border-radius: 8px; flex: none; }
+.word-atlas-content { min-width: 0; }
+.word-atlas p { margin: 5px 0; }
+.word-atlas p span { display: block; opacity: .8; }
+.word-atlas-audio { display: flex; flex-wrap: wrap; gap: 4px; }
+.word-atlas button { cursor: pointer; border: 1px solid rgba(128,128,128,.35); border-radius: 6px; padding: 3px 6px; background: transparent; color: inherit; font: inherit; }
+.word-atlas-example { display: flex; align-items: flex-start; gap: 8px; margin-top: 7px; }
+.word-atlas-example button { flex: none; min-width: 32px; min-height: 32px; display: inline-flex; align-items: center; justify-content: center; }
+.word-atlas-example button svg { width: 17px; height: 17px; }
+.word-atlas-example p { margin: 0; }
+.word-atlas-credit { display: block; margin-top: 8px; }
+.word-atlas-credit a { color: inherit; text-decoration: underline; }
+.vocab-study-content:has(> .word-atlas) { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr); gap: 20px; align-items: stretch; }
+.vocab-study-content > .word-atlas { margin: 0; padding: 20px; font-size: 14px; background: rgba(18,26,46,.75); }
+.vocab-study-content.is-revealed { align-items: start; }
+.vocab-study-content.is-revealed > .word-atlas { max-height: min(65vh, 560px); overflow-y: auto; }
+.vocab-study-content > .word-atlas.is-preview .word-atlas-body { flex-direction: column; align-items: center; gap: 16px; }
+.vocab-study-content > .word-atlas.is-preview img { width: min(220px, 100%); height: auto; aspect-ratio: 1; }
+.vocab-study-content > .word-atlas.is-preview .word-atlas-audio { justify-content: center; }
+.vocab-study-content .vocab-flashcard { width: 100%; }
+@media (max-width: 700px) {
+  .vocab-study-content:has(> .word-atlas) { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .vocab-study-content > .word-atlas.is-preview .word-atlas-body { flex-direction: row; }
+  .vocab-study-content > .word-atlas.is-preview img { width: 120px; }
+}

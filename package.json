@@ -1,0 +1,25 @@
+{
+  "name": "shadowmeow-extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Free open-source Chrome extension for sentence listening & shadowing — companion to ShadowMeow iOS (paid).",
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "extension"
+  ],
+  "scripts": {
+    "build:contracts": "npm run build -w @shadow-language/contracts",
+    "build:extension": "npm run build -w @shadow-language/contracts && npm run build -w @shadow-language/extension",
+    "build": "npm run build:extension",
+    "dev": "npm run build -w @shadow-language/contracts && npm run dev -w @shadow-language/extension",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

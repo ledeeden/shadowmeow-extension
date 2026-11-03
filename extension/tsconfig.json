@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["wxt/browser", "vite/client"],
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
+    "noEmit": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".wxt/wxt.d.ts"]
+}

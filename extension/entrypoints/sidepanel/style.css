@@ -1,0 +1,35 @@
+:root {
+  color-scheme: dark;
+  background: #0b120e;
+  color: #edf7f0;
+  font-family: var(--sl-font-ui);
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { min-height: 100%; }
+
+body { margin: 0; background: #0b120e; }
+
+button { font: inherit; }
+
+.new-words-app { display: flex; flex-direction: column; min-height: 100vh; }
+
+.new-words-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 14px 12px; border-bottom: 1px solid rgba(255,255,255,.1); background: #0e1711; }
+.new-words-header strong { color: #ffe0a0; font-size: 14px; }
+.new-words-refresh { display: grid; place-items: center; width: 28px; height: 28px; padding: 0; border: 0; border-radius: 7px; color: #a9c2b1; background: rgba(255,255,255,.08); cursor: pointer; font-size: 15px; }
+.new-words-refresh:hover { color: #fff; background: rgba(255,255,255,.16); }
+.new-words-refresh:disabled { cursor: default; opacity: .45; }
+
+.new-words-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-content: start; gap: 8px; flex: 1; overflow-y: auto; margin: 0; padding: 12px; list-style: none; scrollbar-color: #806631 transparent; }
+.new-word-card { display: flex; min-width: 0; min-height: 72px; flex-direction: column; justify-content: center; gap: 7px; padding: 10px 8px; border: 1px solid rgba(255,216,137,.18); border-radius: 10px; background: rgba(155,111,35,.13); }
+.new-word-card strong { overflow-wrap: anywhere; color: #ffe4a4; font-size: 12px; line-height: 1.25; }
+.new-word-card span { overflow-wrap: anywhere; color: #f2f6d9; font-size: 11px; line-height: 1.35; }
+.new-word-card.pending span, .new-word-card.missing span { color: #899c90; }
+.new-words-empty { display: grid; min-height: 120px; place-items: center; grid-column: 1 / -1; color: #93a59a; font-size: 12px; }
+
+@media (max-width: 260px) {
+  .new-words-grid { gap: 5px; padding: 8px; }
+  .new-word-card { min-height: 64px; padding: 8px 6px; }
+  .new-word-card strong, .new-word-card span { font-size: 10px; }
+}
